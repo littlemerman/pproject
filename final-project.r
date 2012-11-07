@@ -1,7 +1,3 @@
-# Final Project
-# Intro Data Science
-# Ariel MArcus
-
 require(stringr)
 require(plyr)
 require(ggplot2)
@@ -11,17 +7,17 @@ require(randomForest)
 ## Load Data
 
 sampleSub <- read.csv(
-   file="file:///C:/Users/openbi/Dropbox/intro_data_science/final_project/sample_submission_file.csv",
+   file="sample_submission_file.csv",
    stringsAsFactors=F)
 
 head(sampleSub)
 nrow(sampleSub)
 
-train <- read.delim(file="file:///C:/Users/openbi/Dropbox/intro_data_science/final_project/train.tsv",
+train <- read.delim(file="train.tsv",
                     stringsAsFactors=FALSE,
                     fill=FALSE)
 
-test <- read.delim(file="file:///C:/Users/openbi/Dropbox/intro_data_science/final_project/test.tsv",
+test <- read.delim(file="test.tsv",
                    stringsAsFactors=FALSE,
                    fill=FALSE)
 
@@ -133,7 +129,7 @@ model.rf[["type"]]
 
 ## Write out results
 
-write.table(submission1, file="file:///C:/Users/openbi/Dropbox/intro_data_science/final_project/submission1.csv", , sep=",", row.names=FALSE, na="NA", eol="\n", quote=FALSE)
+write.table(submission1, file="submission1.csv", , sep=",", row.names=FALSE, na="NA", eol="\n", quote=FALSE)
 
 submission1 <- data.frame(test$id, test$set, sampleSub$weight, test$grade)
 names(submission1) <- names(sampleSub)
