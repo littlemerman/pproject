@@ -4,14 +4,12 @@ require(ggplot2)
 require(mboost)
 require(randomForest)
 
+## hey!
+
 ## Load Data
 
-sampleSub <- read.csv(
-   file="sample_submission_file.csv",
-   stringsAsFactors=F)
-
-head(sampleSub)
-nrow(sampleSub)
+sampleSub <- read.csv(file="sample_submission_file.csv",
+                      stringsAsFactors=F)
 
 train <- read.delim(file="train.tsv",
                     stringsAsFactors=FALSE,
@@ -20,12 +18,6 @@ train <- read.delim(file="train.tsv",
 test <- read.delim(file="test.tsv",
                    stringsAsFactors=FALSE,
                    fill=FALSE)
-
-nrow(test)
-
-names(train)
-
-
 
 ## Normalize grades
 
